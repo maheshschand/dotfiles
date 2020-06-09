@@ -1,5 +1,4 @@
-" Andrew J. Kronser
-" VIM Settings - Yeah!
+" These are my customized vim settings
 
 " COLOR
 "  1. use 256 colorscheme
