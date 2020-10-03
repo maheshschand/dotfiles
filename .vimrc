@@ -114,3 +114,14 @@ autocmd bufnewfile,bufread *.java set makeprg=javac\ *.java
 set clipboard=unnamedplus
 
 set number
+
+" For WSL2 yank support
+" Usage: yG if you are at the beginning of the file, or ggyG if not without having to go into the Visual mode with V
+" :%y will yank everything, no matter where you are in the buffer.
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
