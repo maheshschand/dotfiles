@@ -59,15 +59,12 @@ set foldmethod=syntax
 set foldlevelstart=99
 
 " SEARCH
-"  1. search in real-time
-"  2. highlight search terms
-"  3. case-insensitive search
-"  4. set ctrl-f to find
-"  5. set ctrl-r to replace
-"  6. clear searchhl with esc
-set incsearch
-set hlsearch
-set ignorecase
+"  1. set ctrl-f to find
+"  2. set ctrl-r to replace
+"  3. clear searchhl with esc
+set incsearch " Make search incremental
+set hlsearch " Highlight search results
+set ignorecase " Ignores case when search...
 nnoremap <C-F> /
 nnoremap <C-R> :%s/
 
@@ -113,7 +110,11 @@ autocmd bufnewfile,bufread *.java set makeprg=javac\ *.java
 
 set clipboard=unnamedplus
 
-set number
+set number " Turn on line numbers
+
+" Disable annoying error sounds
+set noerrorbells
+set novisualbell
 
 " For WSL2 yank support
 " Usage: yG if you are at the beginning of the file, or ggyG if not without having to go into the Visual mode with V
